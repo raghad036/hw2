@@ -105,25 +105,13 @@ your Git pane is cleared up afterwards.d*
 
 ## But of those US-based Nobel laureates, many were born in other countries
 
-``` r
-nobel_living_science %>%
-    ggplot(aes(x = country_us,y=category, fill =category)) +
-   geom_bar(stat = "identity", position = "dodge") + 
-   coord_flip()
-```
-
-![](lab-05_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
-
 4.  Create a new variable called `born_country_us` that has the value
     `"USA"` if the laureate is born in the US, and `"Other"` otherwise.
-    How many of the winners are born in the US?
+    How many of the winners are born in the US? 243
 
 ``` r
 nobel_living_science <- nobel_living_science %>% mutate( born_country_us = if_else(born_country == "USA", "USA", "Other"))
-nobel_living_science %>%ggplot(aes(x = country_us,y=born_country_us, fill = category)) + geom_bar(stat = "identity", position = "dodge", orientation="horizontal")
 ```
-
-![](lab-05_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 Knit, *commit, and push your changes to GitHub with an appropriate
 commit message. Make sure to commit and push all changed files so that
