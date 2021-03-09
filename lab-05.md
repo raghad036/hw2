@@ -127,7 +127,10 @@ your Git pane is cleared up afterwards.d*
     -   Within each facet, there should be a bar for whether the
         laureate won the award in the US or not.
     -   Each bar should have segments for whether the laureate was born
-        in the US or not.
+        in the US or not. yes , because in buzzfeed we analyzing the
+        data to search for more understanding the data and get
+        information form it we go deep and deep and make a lot of
+        filtrations to understanding the data
 
 ``` r
 nobel_living_science <- nobel_living_science %>% mutate( born_country_us = if_else(born_country == "USA", "USA", "Other"))
