@@ -70,6 +70,13 @@ nrow(nobel_living)
 
 Get the code from the Lab document
 
+``` r
+nobel_living <- nobel_living %>%
+mutate(
+country_us = if_else(country == "USA", "USA", "Other")
+)
+```
+
 Next, we will limit our analysis to only the following categories:
 Physics, Medicine, Chemistry, and Economics.
 
